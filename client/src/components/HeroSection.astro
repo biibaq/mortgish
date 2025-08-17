@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import HeroImage from '../assets/house_320.webp';
+---
+<section>
+    <div class='flex items-center justify-center h-screen bg-gray-100'>
+        <div>
+            <h1>Welcome to Mortgish</h1>
+            <p>Your go-to platform for mortgage calculations and insights.</p>
+            <a href="/calculator" class="btn">Start Calculating</a>
+        </div>
+        <div>
+            <Image src={HeroImage} alt="Hero Image" class="w-full h-auto" />
+        </div>
+    </div>
+</section>
