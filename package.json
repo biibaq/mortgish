@@ -1,0 +1,12 @@
+{
+  "name": "mortgish",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cd client && pnpm dev"
+  },
+  "repository": "https://github.com/biibaq/mortgish.git",
+  "author": "XX Watson <me@biibaq.com>",
+  "license": "None",
+  "private": true
+}

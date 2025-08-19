@@ -1,20 +1,43 @@
 import React, { useState } from "react";
 
+const logValues = (
+  purchasePrice,
+  mortgageRate,
+  percentDown,
+  amortizationPeriod,
+  insuranceRate
+) => {
+  console.log("purchase price: ", purchasePrice);
+  console.log("mortgage rate: ", mortgageRate);
+  console.log("percentage of down payment: ", percentDown);
+  console.log("amortization period: ", amortizationPeriod);
+  console.log("insurance rate: ", insuranceRate);
+}
+
 const MortgageCalculator = () => {
-  const [purchasePrice, setPurchasePrice] = useState("");
-  const [mortgageRate, setMortgageRate] = useState("");
-  const [percentDown, setPercentDown] = useState("");
-  const [amortizationPeriod, setAmortizationPeriod] = useState("");
-  const [insuranceRate, setInsuranceRate] = useState("");
+  const [purchasePrice, setPurchasePrice] = useState(0);
+  const [mortgageRate, setMortgageRate] = useState(0);
+  const [percentDown, setPercentDown] = useState(0);
+  const [amortizationPeriod, setAmortizationPeriod] = useState(0);
+  const [insuranceRate, setInsuranceRate] = useState(0);
+  const [monthlyPayment, setMonthlyPayment] = useState(0);
 
   // Stub calculation function
   const calculateMonthlyPayment = () => {
     // TODO: Implement real calculation
-    return "0.00";
+    logValues(
+      purchasePrice,
+      mortgageRate,
+      percentDown,
+      amortizationPeriod,
+      insuranceRate
+    );
+    const _payment = 1000;
+    setMonthlyPayment(_payment);
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded shadow space-y-4">
+    <div className="max-w-3xl mx-auto p-16 bg-white rounded shadow space-y-4">
       <div>
         <label className="block text-sm font-medium mb-1">Purchase Price</label>
         <input
@@ -70,9 +93,14 @@ const MortgageCalculator = () => {
         <input
           type="text"
           className="w-full border rounded px-3 py-2 bg-gray-100"
-          value={calculateMonthlyPayment()}
+          value={monthlyPayment}
           readOnly
         />
+        <input 
+          className="block border-0 rounded-md p-2 text-2xl m-auto mt-8 font-medium mb-1 bg-blue-700 text-amber-50" 
+          type="button" 
+          value="Calculate"
+          onClick={calculateMonthlyPayment} />
       </div>
     </div>
   );
